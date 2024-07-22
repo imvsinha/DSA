@@ -20,7 +20,7 @@ function sumZero(arr) {
         if (sum > 0) {
             last --;
         } else {
-            first++
+            first ++
         }
     }
     return;
