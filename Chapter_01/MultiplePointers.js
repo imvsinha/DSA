@@ -9,11 +9,23 @@
 */
 
 function sumZero(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i]) {
-            
+    let first = 0;
+    let last = arr.length - 1;
+
+    while(first<last) {
+        let sum = arr[first] + arr[last];
+        if (sum === 0) {
+            return [arr[first], arr[last]];
+        }
+        if (sum > 0) {
+            last --;
+        } else {
+            first++
         }
     }
+    return;
 }
 
-console.log([])
+console.log(sumZero([-3,-2,-1,0,1,2,3]));
+console.log(sumZero([-2,0,1,3]));
+console.log(sumZero([1,2,3]));
