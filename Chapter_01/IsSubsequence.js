@@ -16,6 +16,7 @@
     Space Complexity - O(1)
 */
 
+// Iterative
 function isSubsequence(word1, word2) {
     let i = 0;
     let j = 0;
@@ -35,3 +36,21 @@ console.log(isSubsequence('hello', 'hello world'));
 console.log(isSubsequence('abc', 'acb'));
 console.log(isSubsequence('sing', 'sting'));
 console.log(isSubsequence('abc', 'abracadabra'));
+
+function isSubsequenceRec(word1,word2) {
+    if (word1.length === 0) {
+        return true;
+    }
+    if (word2.length === 0) {
+        return false;
+    }
+    if (word2[0] === word1[0]) {
+        return isSubsequenceRec(word1.slice(1), word2.slice(1));
+    }
+    return isSubsequenceRec(word1, word2.slice(1));
+}
+
+console.log(isSubsequenceRec('hello', 'hello world'));
+console.log(isSubsequenceRec('abc', 'acb'));
+console.log(isSubsequenceRec('sing', 'sting'));
+console.log(isSubsequenceRec('abc', 'abracadabra'));
