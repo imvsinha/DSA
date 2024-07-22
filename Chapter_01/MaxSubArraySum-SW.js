@@ -19,13 +19,17 @@
 */
 
 function maxSubArraySum(arr, num) {
+
+    if (num>arr.length) {
+        return null;
+    }
     let sum = 0;
 
     for (let i = 0; i < num; i++) {
         sum = sum + arr[i];
     }
 
-    //console.log(sum);
+    console.log(sum);
 
     let tempSum = sum;
 
@@ -42,3 +46,4 @@ function maxSubArraySum(arr, num) {
 
 console.log(maxSubArraySum([100,200,300,400], 2));
 console.log(maxSubArraySum([1,4,2,10,23,3,1,0,20], 4));
+console.log(maxSubArraySum([2,3], 3));
